@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Orbitron:wght@400..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Strait&display=swap');
+*{
+    color: rgb(0, 0, 0);
+    font-family: "Red Hat Display", sans-serif;
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    font-family: system-ui;
+}
+::-webkit-scrollbar {
+    display: none;
+} 
+li{
+    width: 130%;
+    position: absolute;
+    top: 71%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: -1000;
+}
+a{
+    text-decoration: none;
+}
+.main-header input{
+    float: inline-end;
+    border: none;
+    font-size: 40px;
+    position: relative;
+    z-index: 5000;
+    left: -168px;
+}
+.header-wrapper {
+    max-width: fit-content;
+    position: relative;
+}
+.menubar {
+    float: left;
+    padding: 63px;
+    width: 13%;
+    left: -1%;
+    top: 0%;
+    height: 85%;
+    border: solid 1px black;
+    z-index: -1;
+    position: fixed;
+    background: #000000;
+    font-weight: 700;
+}
+
+.menubar a {
+    line-height: 72px;
+    color: gray;
+}
+.main-header button{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border: none;
+    font-size: 47px;
+    outline: none;
+}
+.main-header form{
+    padding-top: 226%;
+    padding-left: 117%;
+}
+.main-header form p{
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    float: inline-end;
+}
+.menubar i{
+    position: relative;
+    top: -2px;
+    left: -7px;
+    color: gray;
+}
+.timedate{
+    position: relative;
+    font-size: 99px;
+    top: 270px;
+    left: 19%;
+    width: 116%;
+    font-weight: 700;
+}
+.msg{
+    position: relative;
+    left: 24%;
+    top: 151px;
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    text-decoration: overline;
+}
+.pincode input{
+    font-size: 50px;
+    position: relative;
+    top: 45%;
+    left: 45%;
+    padding: 21px 67px;
+    width: 45%;
+    background: #ffffff45;
+    border: none;
+    border-radius: 21px;
+    color: white;
+    outline: none;
+}
+.pincode{
+    position: relative;
+    padding-top: 172%;
+    padding-bottom: 117%;
+}
+.pincode button{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border: none;
+    border-radius: 38px;
+    font-size: 51px;
+    position: relative;
+    left: 68%;
+    padding-top: 13%;
+    text-align: center;
+}
+
+@media only screen and (min-width: 425px) {
+    *{
+      background-color: #000000;
+    }
+    body {
+        background-color: #000000;
+        display: none;
+    }
+  }

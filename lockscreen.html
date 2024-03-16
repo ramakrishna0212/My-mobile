@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="em">
+<head>
+    <script src="https://kit.fontawesome.com/6704942071.js" crossorigin="anonymous"></script>
+    <title>My mobile</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/WBcSJPd/New-Project-A1-A7313.png">
+    <script src="images.js" defer></script>
+    <link rel="stylesheet" href="lockscreen.css">
+</head>
+<body>
+        <div class="main-header">
+            <div class="timedate">
+                <p id="datetime" style="color: rgb(255, 255, 255)"></p>
+            </div>
+            <script>
+                function updateTime() {
+                    var today = new Date();
+                    var options = {  day: 'numeric' ,month: 'short',weekday: 'short'};
+                    var dateTime = today.toLocaleDateString(undefined, options) + ' ' + today.toLocaleTimeString();
+                    document.getElementById('datetime').innerText = dateTime;
+                }
+                setInterval(updateTime, 1000);
+                updateTime();
+            </script>    
+            <form>
+                <input type="file" id="add" multiple>
+                <button id="save">Save</button>
+                <ul class="todoss"></ul>
+            </form>
+        </div>
+        <div class="msg">
+            Scroll up
+        </div>
+    <script>
+        const todossUl = document.querySelector('.todoss');
+            const input = document.querySelector('#add');
+            const saveBtn = document.querySelector('#save');
+
+            let userCounter = 0;
+            let lineCounter = 0;
+
+            const gettodoss = () => {
+                let todoss;
+                if (localStorage.getItem('todoss') === null) {
+                    todoss = [];
+                } else {
+                    todoss = JSON.parse(localStorage.getItem('todoss'));
+                }
+                return todoss;
+            };
+            
+
+            const loadImagesFromLocalStorage = () => {
+                const todoss = gettodoss();
+
+                todoss.forEach(item => {
+                    let li = document.createElement('li');
+                    let img = document.createElement('img');
+                    let span = document.createElement('span');
+                    img.onload = function() {
+                        li.appendChild(img);
+                        img.style.width = '90%'; 
+                        todossUl.appendChild(li);
+                    };
+                    img.src = item.imageData;
+                    
+                    li.appendChild(span);
+                    li.addEventListener('dblclick', () => {
+                        deletetodoss(todoss, item);
+                        todossUl.removeChild(li);
+                    });
+                });
+            };
+            const addtodoss = e => {
+                e.preventDefault();
+                const files = input.files;
+                const submissionTime = Date.now();
+                while (todossUl.firstChild) {
+                    todossUl.removeChild(todossUl.firstChild);
+                }
+                let todoss = [];
+                localStorage.removeItem('todoss');
+                let line = document.createElement('hr');
+                lineCounter++;
+                todossUl.appendChild(line);
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (file) {
+                        let li = document.createElement('li');
+                        let img = document.createElement('img');
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            img.src = e.target.result;
+                            li.appendChild(img);
+                            img.style.width = '90%'; 
+                            savetodoss(e.target.result, submissionTime); 
+                        };
+                        reader.readAsDataURL(file);
+                        todossUl.appendChild(li);
+                    }
+                }
+                input.value = ''; 
+            };
+
+            const savetodoss = (imageData, time) => {
+                let todoss = gettodoss();
+                todoss.push({ imageData, time });
+                localStorage.setItem('todoss', JSON.stringify(todoss));
+            };
+            const deletetodoss = (todoss, item) => {
+                const index = todoss.findIndex(i => i === item);
+                if (index !== -1) {
+                    todoss.splice(index, 1);
+                    localStorage.setItem('todoss', JSON.stringify(todoss));
+                }
+            };
+            window.addEventListener('DOMContentLoaded', () => {
+                loadImagesFromLocalStorage();
+            });
+            saveBtn.addEventListener('click', addtodoss);
+    </script>
+    <div class="pincode">
+        <form id="list">
+            <div class="loginame">
+                <input type="name" id="name" name="name" placeholder="Enter the password" autocomplete="off" required><br><br>
+            </div>
+            <button id="submit" type="button">OK</button>
+        </form>
+        <script>
+            document.getElementById('submit').addEventListener('click', function() {
+                event.preventDefault(); 
+                var name = document.getElementById('name').value;
+                if (name === '999'){
+                    window.location.href = "homescreen.html";
+                }
+                else if (name === ''){
+                    alert("Enter the password first.");
+                }
+                else {
+                    alert("Invalid password.");
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

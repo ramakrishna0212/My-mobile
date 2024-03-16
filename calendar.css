@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Orbitron:wght@400..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Strait&display=swap');
+*{
+    color: rgb(255, 255, 255);
+    font-family: "Red Hat Display", sans-serif;
+}
+body{
+  background-color: #000000;
+  font-weight: 300;
+}
+table {
+  width: 95%;
+  position: fixed;
+  top: 17%;
+}
+tr{
+  color: #ffffff;
+}
+th, td {
+    border: 0px solid #000000;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #000000;
+}
+.highlight {
+    background-color: #ff00008b;
+    color: white;
+}
+
+.but1{
+  background: none;
+  border: none;
+  position: fixed;
+  top: 72%;
+  left: 20%;
+  font-size: 19px;
+}
+
+.but2{
+  background: none;
+    border: none;
+    position: fixed;
+    top: 72%;
+    left: 71%;
+    font-size: 19px;
+}
+
+@media only screen and (min-width: 425px) {
+  *{
+    background-color: #000000;
+  }
+  body {
+      background-color: #000000;
+      display: none;
+  }
+}

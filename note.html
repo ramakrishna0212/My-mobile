@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My mobile</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/WBcSJPd/New-Project-A1-A7313.png">
+    <link rel="stylesheet" href="note.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo">
+            <h1>Note</h1>
+            
+            <div class="search">
+                <input type="text" id="search-bar" placeholder="Enter the note here.....">
+                <button onclick="addTask()">Add</button>
+            </div>
+        </div>
+        <ul id="list-container">
+        
+        </ul>
+    </div>
+    <script>
+        const searchBar = document.getElementById("search-bar");
+const listcontainer = document.getElementById("list-container");
+
+function addTask(){
+    if(searchBar.value === ''){
+        alert("You didn't write any note");
+    }
+    else{
+        let li = document.createElement("li")
+        li.innerHTML = searchBar.value;
+        listcontainer.appendChild(li);
+
+        let span = document.createElement("span")
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+    }
+    searchBar.value="";
+    saveData();
+}
+
+listcontainer.addEventListener("click", function(e){
+    /* tick mark checked*/
+    if(e.target.tagName === "LI"){
+        e.target.classList.toggle("checked");
+        saveData();
+    }
+    /* delete */
+    else if(e.target.tagName === "SPAN"){
+        e.target.parentElement.remove();
+        saveData();
+    }
+});
+
+function saveData(){
+    /* saves data */
+    localStorage.setItem("data", listcontainer.innerHTML);
+
+}
+function showTask(){
+    /* display data */
+    listcontainer.innerHTML = localStorage.getItem("data");
+}
+showTask();
+    </script>
+</body>
+</html>

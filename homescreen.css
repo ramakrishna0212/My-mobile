@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Orbitron:wght@400..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Strait&display=swap');
+*{
+    color: rgb(255, 255, 255);
+    font-family: "Red Hat Display", sans-serif;
+    list-style: none;
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+}
+::-webkit-scrollbar {
+    display: none;
+} 
+.main-header li{
+    width: 125%;
+    position: absolute;
+    top: 33%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    z-index: -1000;
+    float: inline-start;
+}
+.main-header li img{
+    border-radius: 100px;
+}
+a{
+    text-decoration: none;
+}
+.main-header input{
+    float: inline-end;
+    border: none;
+    font-size: 40px;
+    position: relative;
+    z-index: 5000;
+    left: -168px;
+}
+.header-wrapper {
+    max-width: fit-content;
+    position: relative;
+}
+.menubar {
+    float: left;
+    padding: 63px;
+    width: 13%;
+    left: -1%;
+    top: 0%;
+    height: 85%;
+    border: solid 1px black;
+    z-index: -1;
+    position: fixed;
+    background: #000000;
+    font-weight: 700;
+}
+
+.menubar a {
+    line-height: 72px;
+    color: gray;
+}
+.main-header button{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    padding: 7px 42px;
+    border: none;
+    border-radius: 38px;
+    font-size: 38px;
+    position: relative;
+    top: 47%;
+}
+.main-header form{
+    padding-top: 132%;
+    padding-left: 116%;
+}
+.main-header form p{
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    float: inline-end;
+}
+.menubar i{
+    position: relative;
+    top: -2px;
+    left: -7px;
+    color: gray;
+}
+.timedate{
+    position: relative;
+    font-size: 99px;
+    top: 270px;
+    left: 21%;
+    width: 116%;
+    font-weight: 400;
+}
+.msg{
+    position: relative;
+    left: 24%;
+    top: 151px;
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    text-decoration: overline;
+}
+.pincode input{
+    font-size: 50px;
+    position: relative;
+    top: 45%;
+    left: 45%;
+    padding: 21px 67px;
+    width: 45%;
+    background: #ffffff45;
+    border: none;
+    border-radius: 21px;
+    color: white;
+    outline: none;
+}
+.pincode{
+    position: relative;
+    padding-top: 172%;
+    padding-bottom: 88%;
+}
+.pincode button{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border: none;
+    border-radius: 38px;
+    font-size: 51px;
+    position: relative;
+    left: 68%;
+    padding-top: 13%;
+    text-align: center;
+}
+.logoLink{
+    display: none;
+}
+.websiteForm input{
+    font-size: 11px;
+    background: #ffffff45;
+    border: none;
+    color: black;
+    outline: none;
+}
+.button1{
+    color: rgb(0 0 0);
+    background: rgb(255 255 255);
+    border: none;
+    border-radius: 20px;
+    font-size: 24px;
+    position: relative;
+    left: 1%;
+    margin-top: 47px;
+    padding: 18px 35px;
+    text-align: center;
+}
+.websiteForm .label1{
+    bottom: 29px;
+}
+.input1{
+    position: relative;
+    left: 8%;
+    width: 24.5%;
+    font-size: 41px;
+    outline: none;
+    border: solid;
+    bottom: 29px;
+    color: black;
+}
+.input2{
+    position: relative;
+    left: 4.5%;
+    width: 25.5%;
+    font-size: 41px;
+    outline: none;
+    border: solid;
+    color: rgb(0, 0, 0);
+}
+.addedsites ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 131px;
+    position: relative;
+    top: 53px;
+    left: -20%;
+    bottom: 1px;
+}
+
+.addedsites li{   
+    width: 78%;
+    font-size: 31px;
+    text-align: end;
+}
+.apps {
+    margin-top: 40%;
+    font-size: 35px;
+    position: relative;
+    left: 29%;
+    bottom: 300px;
+}
+.addedsites button{
+    background: white;
+    color: black;
+    border: white;
+    font-size: 25px;
+    border-radius: 34px;
+    padding: 14px 40px;
+    position: relative;
+    top: 45px;
+    font-weight: bold;
+}
+.addedsites h2{
+    position: relative;
+    top: 56px;
+}
+.givenwebsites {
+    position: absolute;
+    top: 24px;
+    font-size: 49px;
+    left: 54%;
+}
+.givenwebsites a{
+    background: #9b0000;
+    padding: 25px 52px 29px 43px;
+    border-radius: 26px;
+}
+li img{
+    border-radius: 155px;
+}
+
+@media only screen and (min-width: 425px) {
+    *{
+      background-color: #000000;
+    }
+    body {
+        background-color: #000000;
+        display: none;
+    }
+  }
