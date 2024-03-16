@@ -223,7 +223,7 @@ li img{
     border-radius: 155px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1000px) {
     *{
       background-color: #000000;
     }
